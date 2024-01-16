@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.srm.supplierBase.mapper.PotentialRequirementMapper">
+    <resultMap id="potentialReqMap" type="com.ruoyi.srm.supplierBase.domain.entity.PotentialRequirementEntity" >
+        <result property="id"    column="id" />
+        <result property="reqCode"    column="req_code" />
+        <result property="managerId"    column="manager_id" />
+        <result property="reqName"    column="req_name" />
+        <result property="category"    column="category" />
+        <result property="sourceDescription"    column="source_description" />
+        <result property="argumentationFileId"    column="argumentation_file_id" />
+        <result property="creatorUserId"    column="creator_user_id"/>
+        <result property="creatorTime"    column="creator_time" />
+        <result property="creatorUser"    column="creator_user" />
+        <result property="lastModifyTime"    column="last_modify_time"/>
+        <result property="lastModifyUserId"    column="last_modify_user_id" />
+        <result property="lastModifyUser"    column="last_modify_user" />
+        <result property="deleteFlag"    column="delete_flag" />
+        <result property="infoSurvey"    column="info_survey" />
+        <result property="processInstanceId"    column="process_instance_id" />
+    </resultMap>
+
+    <sql id="selectPotential">
+        select id, req_code, manager_id, req_name, category, source_description, argumentation_file_id,infoSurvey,process_instance_id,
+        creator_user_id,creator_time,creator_user,last_modify_time,last_modify_user_id,last_modify_user,delete_flag  from ag_supplier_potential_requirement
+    </sql>
+</mapper>

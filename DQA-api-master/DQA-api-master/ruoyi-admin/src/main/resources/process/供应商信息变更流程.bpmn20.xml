@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:flowable="http://flowable.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.flowable.org/processdef" exporter="Flowable Open Source Modeler" exporterVersion="6.7.2">
+  <process id="SupplierModificationProcess" name="供应商信息变更流程" isExecutable="true">
+    <startEvent id="startEvent1" flowable:formFieldValidation="true"></startEvent>
+    <userTask id="sid-1A89C44E-4B84-4F2F-A1B7-492A58332E65" name="变更发起" flowable:formFieldValidation="true"></userTask>
+    <sequenceFlow id="sid-51249464-CF45-43BC-A9B3-4C4858ADB43F" sourceRef="startEvent1" targetRef="sid-1A89C44E-4B84-4F2F-A1B7-492A58332E65"></sequenceFlow>
+    <userTask id="sid-1E255582-81B4-480A-950C-1BDDEEF264E7" name="供应商部门负责人审批" flowable:formFieldValidation="true"></userTask>
+    <sequenceFlow id="sid-1C6C3097-4756-4C32-AB2D-663AFDFD4919" sourceRef="sid-1A89C44E-4B84-4F2F-A1B7-492A58332E65" targetRef="sid-1E255582-81B4-480A-950C-1BDDEEF264E7"></sequenceFlow>
+    <endEvent id="sid-8C80C417-1D20-4C3B-8DD8-18D97254B63F"></endEvent>
+    <sequenceFlow id="sid-B42E7134-7B65-4525-8D4F-960801E77FA8" sourceRef="sid-1E255582-81B4-480A-950C-1BDDEEF264E7" targetRef="sid-8C80C417-1D20-4C3B-8DD8-18D97254B63F"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_SupplierModificationProcess">
+    <bpmndi:BPMNPlane bpmnElement="SupplierModificationProcess" id="BPMNPlane_SupplierModificationProcess">
+      <bpmndi:BPMNShape bpmnElement="startEvent1" id="BPMNShape_startEvent1">
+        <omgdc:Bounds height="30.0" width="30.0" x="90.0" y="150.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-1A89C44E-4B84-4F2F-A1B7-492A58332E65" id="BPMNShape_sid-1A89C44E-4B84-4F2F-A1B7-492A58332E65">
+        <omgdc:Bounds height="80.0" width="100.0" x="165.0" y="125.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-1E255582-81B4-480A-950C-1BDDEEF264E7" id="BPMNShape_sid-1E255582-81B4-480A-950C-1BDDEEF264E7">
+        <omgdc:Bounds height="80.0" width="100.0" x="300.0" y="125.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-8C80C417-1D20-4C3B-8DD8-18D97254B63F" id="BPMNShape_sid-8C80C417-1D20-4C3B-8DD8-18D97254B63F">
+        <omgdc:Bounds height="28.0" width="28.0" x="455.0" y="151.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sid-51249464-CF45-43BC-A9B3-4C4858ADB43F" id="BPMNEdge_sid-51249464-CF45-43BC-A9B3-4C4858ADB43F" flowable:sourceDockerX="15.0" flowable:sourceDockerY="15.0" flowable:targetDockerX="50.0" flowable:targetDockerY="40.0">
+        <omgdi:waypoint x="119.94999848995758" y="165.0"></omgdi:waypoint>
+        <omgdi:waypoint x="165.0" y="165.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-1C6C3097-4756-4C32-AB2D-663AFDFD4919" id="BPMNEdge_sid-1C6C3097-4756-4C32-AB2D-663AFDFD4919" flowable:sourceDockerX="50.0" flowable:sourceDockerY="40.0" flowable:targetDockerX="50.0" flowable:targetDockerY="40.0">
+        <omgdi:waypoint x="264.95000000000005" y="165.0"></omgdi:waypoint>
+        <omgdi:waypoint x="300.0" y="165.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-B42E7134-7B65-4525-8D4F-960801E77FA8" id="BPMNEdge_sid-B42E7134-7B65-4525-8D4F-960801E77FA8" flowable:sourceDockerX="50.0" flowable:sourceDockerY="40.0" flowable:targetDockerX="14.0" flowable:targetDockerY="14.0">
+        <omgdi:waypoint x="399.95000000000005" y="165.0"></omgdi:waypoint>
+        <omgdi:waypoint x="455.0" y="165.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.srm.supplierBase.mapper.ClearRecordsMapper">
+
+    <resultMap id="ClearRecordsEntity" type="ClearRecordsEntity">
+        <id property="id"    column="id"    />
+        <result property="creatorUserId"    column="creator_user_id"    />
+        <result property="creatorTime"    column="creator_time"    />
+        <result property="creatorUser"    column="creator_user"    />
+        <result property="lastModifyTime"    column="last_modify_time"    />
+        <result property="lastModifyUserId"    column="last_modify_user_id"    />
+        <result property="lastModifyUser"    column="last_modify_user"    />
+        <result property="completeTime"    column="complete_time"    />
+        <result property="deleteFlag"    column="delete_flag"    />
+    </resultMap>
+
+    <select id="getClearRecordsByCondition" resultType="ClearRecordsVO">
+        select id as id,creator_user_id as creatorUserId,creator_time as creatorTime,creator_user as creatorUser,
+               last_modify_time as lastModifyTime,last_modify_user_id as lastModifyUserId,last_modify_user as lastModifyUser,
+               complete_time as completeTime,delete_flag as deleteFlag,file_id as fileId
+        from ag_supplier_clear_records
+        where
+        delete_flag = 0
+        <if test="dto.startDate != null">
+            AND  <![CDATA[  complete_time > #{dto.startDate}]]>
+        </if>
+        <if test="dto.endDate != null">
+            AND  <![CDATA[  complete_time < #{dto.endDate}]]>
+        </if>
+        order by creator_time desc
+    </select>
+</mapper>

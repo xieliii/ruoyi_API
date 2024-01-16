@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.srm.supplierBase.mapper.ChangeRecordsMapper">
+
+    <resultMap id="ChangeRecordsEntity" type="ChangeRecordsEntity">
+        <id property="id" column="id"/>
+        <result property="supplierName"    column="supplier_name"    />
+        <result property="holdingCompany"    column="holding_company"    />
+        <result property="businessNum"    column="business_num"    />
+        <result property="establishDate"    column="establish_date"    />
+        <result property="juristicPersonName"    column="juristic_person_name"    />
+        <result property="registeredCapital"    column="registered_capital"    />
+        <result property="companyNature"    column="company_nature"    />
+        <result property="registeredAddress"    column="registered_address"    />
+        <result property="advantage"    column="advantage"    />
+        <result property="businessDescription"    column="business_description"    />
+        <result property="fiscalStartDate"    column="fiscal_start_date"    />
+        <result property="creditCertificateFile"    column="credit_certificate_file"    />
+        <result property="lastQuarterEarn"    column="last_quarter_earn"    />
+        <result property="creatorUserId"    column="creator_user_id"    />
+        <result property="creatorTime"    column="creator_time"    />
+        <result property="creatorUser"    column="creator_user"    />
+        <result property="lastModifyTime"    column="last_modify_time"    />
+        <result property="lastModifyUserId"    column="last_modify_user_id"    />
+        <result property="lastModifyUser"    column="last_modify_user"    />
+        <result property="deleteFlag"    column="delete_flag"    />
+        <result property="supplierId"    column="supplier_id"    />
+        <result property="approveFlag"    column="approve_flag"    />
+        <result property="companyId"    column="company_id"    />
+    </resultMap>
+
+    <select id="getChangeLogByCondition" resultMap="ChangeRecordsEntity">
+        select id,supplier_name,holding_company,business_num,establish_date,juristic_person_name,registered_capital,company_nature,
+               registered_address,advantage,business_description,fiscal_start_date,credit_certificate_file,last_quarter_earn,creator_user_id,
+               creator_time,creator_user,last_modify_time,last_modify_user_id,last_modify_user,supplier_id,approve_flag,company_id
+        from ag_supplier_change_records
+        where
+            delete_flag = 0
+          <if test="dto.supplierName != null and dto.supplierName != ''">
+          and supplier_name like concat('%',#{dto.supplierName},'%')
+          </if>
+          <if test="dto.companyNature != null">
+          and company_nature = #{dto.companyNature}
+          </if>
+        <if test="dto.startDate != null">
+            AND  <![CDATA[  creator_time > #{dto.startDate}]]>
+        </if>
+        <if test="dto.endDate != null">
+            AND  <![CDATA[  creator_time < #{dto.endDate}]]>
+        </if>
+
+
+
+    </select>
+</mapper>

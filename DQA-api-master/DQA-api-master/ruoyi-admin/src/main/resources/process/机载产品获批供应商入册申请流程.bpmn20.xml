@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:flowable="http://flowable.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.flowable.org/processdef" exporter="Flowable Open Source Modeler" exporterVersion="6.7.2">
+  <process id="approvedSupplierEntryProcess" name="机载产品获批供应商入册申请流程" isExecutable="true">
+    <startEvent id="startEvent1" flowable:formFieldValidation="true"></startEvent>
+    <userTask id="sid-F53B5253-08A6-43F0-9DB7-AF6C7F6F1764" name="获批供应商入册申请" flowable:formFieldValidation="true"></userTask>
+    <sequenceFlow id="sid-F2F94DBA-674E-4284-A283-1D8D9A131705" sourceRef="startEvent1" targetRef="sid-F53B5253-08A6-43F0-9DB7-AF6C7F6F1764"></sequenceFlow>
+    <userTask id="sid-D501AE9A-698F-497D-A92C-930212A79387" name="审批需求申请" flowable:formFieldValidation="true"></userTask>
+    <sequenceFlow id="sid-9765CFE5-539A-483E-8318-2B0993D4216C" sourceRef="sid-F53B5253-08A6-43F0-9DB7-AF6C7F6F1764" targetRef="sid-D501AE9A-698F-497D-A92C-930212A79387"></sequenceFlow>
+    <userTask id="sid-6575F30F-950E-47E8-A93C-6534E83463D0" name="审批需求申请" flowable:formFieldValidation="true"></userTask>
+    <sequenceFlow id="sid-E6EF4E9D-4535-4045-9D6B-C44EC0BC497C" sourceRef="sid-D501AE9A-698F-497D-A92C-930212A79387" targetRef="sid-6575F30F-950E-47E8-A93C-6534E83463D0"></sequenceFlow>
+    <userTask id="sid-C9B11DE6-4C55-49DE-9526-927901EDB524" name="审批需求申请" flowable:formFieldValidation="true"></userTask>
+    <sequenceFlow id="sid-63689BE7-EF2A-474A-9E80-7C62E8958B8C" sourceRef="sid-6575F30F-950E-47E8-A93C-6534E83463D0" targetRef="sid-C9B11DE6-4C55-49DE-9526-927901EDB524"></sequenceFlow>
+    <endEvent id="sid-84588C24-8043-411A-BA99-7B0D2D55A6A4"></endEvent>
+    <sequenceFlow id="sid-420BAEFF-5D6E-4660-AD1E-B1CD540DD0D6" sourceRef="sid-C9B11DE6-4C55-49DE-9526-927901EDB524" targetRef="sid-84588C24-8043-411A-BA99-7B0D2D55A6A4"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_approvedSupplierEntryProcess">
+    <bpmndi:BPMNPlane bpmnElement="approvedSupplierEntryProcess" id="BPMNPlane_approvedSupplierEntryProcess">
+      <bpmndi:BPMNShape bpmnElement="startEvent1" id="BPMNShape_startEvent1">
+        <omgdc:Bounds height="30.0" width="30.0" x="100.0" y="163.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-F53B5253-08A6-43F0-9DB7-AF6C7F6F1764" id="BPMNShape_sid-F53B5253-08A6-43F0-9DB7-AF6C7F6F1764">
+        <omgdc:Bounds height="80.0" width="100.0" x="175.0" y="138.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-D501AE9A-698F-497D-A92C-930212A79387" id="BPMNShape_sid-D501AE9A-698F-497D-A92C-930212A79387">
+        <omgdc:Bounds height="80.0" width="100.0" x="315.0" y="135.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-6575F30F-950E-47E8-A93C-6534E83463D0" id="BPMNShape_sid-6575F30F-950E-47E8-A93C-6534E83463D0">
+        <omgdc:Bounds height="80.0" width="100.0" x="465.0" y="135.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-C9B11DE6-4C55-49DE-9526-927901EDB524" id="BPMNShape_sid-C9B11DE6-4C55-49DE-9526-927901EDB524">
+        <omgdc:Bounds height="80.0" width="100.0" x="610.0" y="135.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-84588C24-8043-411A-BA99-7B0D2D55A6A4" id="BPMNShape_sid-84588C24-8043-411A-BA99-7B0D2D55A6A4">
+        <omgdc:Bounds height="28.0" width="28.0" x="755.0" y="161.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sid-420BAEFF-5D6E-4660-AD1E-B1CD540DD0D6" id="BPMNEdge_sid-420BAEFF-5D6E-4660-AD1E-B1CD540DD0D6" flowable:sourceDockerX="50.0" flowable:sourceDockerY="40.0" flowable:targetDockerX="14.0" flowable:targetDockerY="14.0">
+        <omgdi:waypoint x="709.949999999996" y="175.0"></omgdi:waypoint>
+        <omgdi:waypoint x="755.0" y="175.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-E6EF4E9D-4535-4045-9D6B-C44EC0BC497C" id="BPMNEdge_sid-E6EF4E9D-4535-4045-9D6B-C44EC0BC497C" flowable:sourceDockerX="50.0" flowable:sourceDockerY="40.0" flowable:targetDockerX="50.0" flowable:targetDockerY="40.0">
+        <omgdi:waypoint x="414.9499999999581" y="175.0"></omgdi:waypoint>
+        <omgdi:waypoint x="465.0" y="175.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-63689BE7-EF2A-474A-9E80-7C62E8958B8C" id="BPMNEdge_sid-63689BE7-EF2A-474A-9E80-7C62E8958B8C" flowable:sourceDockerX="50.0" flowable:sourceDockerY="40.0" flowable:targetDockerX="50.0" flowable:targetDockerY="40.0">
+        <omgdi:waypoint x="564.9499999999907" y="175.0"></omgdi:waypoint>
+        <omgdi:waypoint x="609.9999999999807" y="175.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-9765CFE5-539A-483E-8318-2B0993D4216C" id="BPMNEdge_sid-9765CFE5-539A-483E-8318-2B0993D4216C" flowable:sourceDockerX="50.0" flowable:sourceDockerY="40.0" flowable:targetDockerX="50.0" flowable:targetDockerY="40.0">
+        <omgdi:waypoint x="274.95000000000005" y="176.92857142857142"></omgdi:waypoint>
+        <omgdi:waypoint x="314.99999999999847" y="176.07035714285715"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-F2F94DBA-674E-4284-A283-1D8D9A131705" id="BPMNEdge_sid-F2F94DBA-674E-4284-A283-1D8D9A131705" flowable:sourceDockerX="15.0" flowable:sourceDockerY="15.0" flowable:targetDockerX="50.0" flowable:targetDockerY="40.0">
+        <omgdi:waypoint x="129.9499984899576" y="178.0"></omgdi:waypoint>
+        <omgdi:waypoint x="174.9999999999917" y="178.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
